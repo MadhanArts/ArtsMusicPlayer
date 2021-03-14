@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/tab_layout"
+        app:tabTextColor="@color/colorAccent"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="center"
+        app:tabIndicatorHeight="40dp"
+        app:tabIndicatorColor="#009688"
+        app:tabIndicator="@drawable/tab_indicator"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/view_pager"
+        android:layout_below="@id/tab_layout"
+        android:layout_alignBottom="@id/fragment_bottom_player"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/fragment_bottom_player"
+
+        >
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.madhanarts.artsmusicplayer.BottomPlayerFragment"
+            tools:layout="@layout/fragment_bottom_player"
+
+            />
+
+    </FrameLayout>
+
+</RelativeLayout>
